@@ -1,0 +1,70 @@
+<div class="p-3 pb-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h6>حدد مواعيد العمل للمورد</h6>
+      <p class="color1">تكوين إعدادات الأسبوع الخاص بك هنا. ما عليك سوى تحريك أشرطة التمرير وإضافة / إزالة أوقات الراحة لإعداد ساعات العمل.</p>
+    </div>
+
+    <div class="rounded border p-2 d-md-flex text-center">
+      <button class="btn ">إعدادات متقدمة</button>
+      <button class="btn btn-primary ">إعدادات تقليدية</button>
+    </div>
+  </div>
+
+
+  <div class="row align-items-center" *ngFor="let oneAlarm of alarm">
+
+    <div class="switch my-3 d-flex align-items-center col-12 col-md-3 col-lg-2 justify-content-between">
+      <label class="toggle-switch">
+        <input type="checkbox" [(ngModel)]="oneAlarm.showproperty" >
+        <div class="toggle-switch-background">
+          <div class="toggle-switch-handle"></div>
+        </div>
+      </label>
+      <span class="px-1">{{oneAlarm.day}}</span>
+    </div>
+
+
+    <div class="col-6 col-md-3 col-lg-4" [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
+      <label for="" class="">وقت البدء</label><br>
+      <input type="time" name="" id="" class="w-100 rounded-3 border p-2" [disabled]="!oneAlarm.showproperty">
+
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-4" [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
+      <label for="">وقت الانتهاء</label><br>
+      <input type="time" name="" id="" class="w-100 rounded-3 border p-2" [disabled]="!oneAlarm.showproperty">
+    </div>
+
+    <div class="col-12 col-md-2 col-lg-1 mt-2 m-md-0 d-flex justify-content-between" [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
+      <button class="btn color1 " style="background-color: rgb(215, 222, 228);" (click)="addInput(oneAlarm.day)">+</button>
+      <i class="fa-regular fa-copy"></i>
+    </div>
+
+    <div class="col-12 row align-items-center" *ngFor="let inputs of oneAlarm.addInput">
+
+      <div class="switch my-3 d-flex align-items-center col-12 col-md-3 col-lg-2 justify-content-between">
+      </div>
+
+
+      <div class="col-6 col-md-3 col-lg-4" [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
+        <label for="" class="">وقت البدء</label><br>
+        <input type="time" name="" id="" class="w-100 rounded-3 border p-2" [disabled]="!oneAlarm.showproperty">
+
+      </div>
+
+      <div class="col-6 col-md-3 col-lg-4" [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
+        <label for="">وقت الانتهاء</label><br>
+        <input type="time" name="" id="" class="w-100 rounded-3 border p-2" [disabled]="!oneAlarm.showproperty">
+      </div>
+
+      <div class="col-12 col-md-2 col-lg-1 mt-2 m-md-0 " [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
+        <button class="btn color1 " style="background-color: rgb(215, 222, 228);" (click)="removInput(oneAlarm.day)">-</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

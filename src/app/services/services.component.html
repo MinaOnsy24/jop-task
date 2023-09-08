@@ -1,0 +1,56 @@
+<div class="p-4">
+
+  <div class="">
+    <label for="frsPhone" class="form-label color1">المورد متاح إلى</label>
+
+    <div class="input-group mb-3">
+      <input type="number" id="frsPhone"class="form-control rounded-end rounded-0" placeholder="" aria-label="">
+      <button class="btn btn-outline-secondary dropdown-toggle rounded-start rounded-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">شهر</button>
+      <ul class="dropdown-menu">
+          <li><a class="dropdown-item " href="#">يناير</a></li>
+          <li><a class="dropdown-item" href="#">فبراير</a></li>
+          <li><a class="dropdown-item" href="#">مارس</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">ابريل</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="" >
+    <label for="" class="color1 ">وقت المورد</label>
+    <div class=" row">
+      <div class="col-12 col-md-8">
+        <input type="radio" id="وقت الخدمة" name="time" value="وقت الخدمة" [(ngModel)]="showTime" (change)="showTime = true">
+        <label class="" for="وقت الخدمة" >وقت الخدمة</label>
+        <input type="radio" id="الوقت ثابت" name="time" value="الوقت ثابت" [(ngModel)]="showTime" (change)="showTime = false">
+        <label class="" for="الوقت ثابت"> الوقت ثابت</label>
+      </div>
+
+      <div [ngClass]="{'hidenTime': showTime }" class="col-12 col-md-4  p-2 rounded-3 border border-dark border-1 d-flex justify-content-between align-items-center">
+        <span class="btn btn-primary " (click)="increases()">+</span>
+        <span>{{counter}}</span>
+        <span class="btn btn-primary "  (click)="decreases()">-</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="">
+    <label for="" class="color1 ">الحجز المتعدد</label>
+    <div class=" row">
+      <div class="col-12 col-md-8">
+        <input type="radio" id="حجز واحد فقط" name="number" value="حجز واحد فقط " [(ngModel)]="showNumber" (change)="showNumber = true">
+        <label class="" for="حجز واحد فقط" >حجز واحد فقط</label>
+        <input type="radio" id="حجز اكثر من شخص لنفس الموعد" name="number" value="حجز اكثر من شخص لنفس الموعد" [(ngModel)]="showNumber" (change)="showNumber = false">
+        <label class="" for="حجز اكثر من شخص لنفس الموعد">حجز اكثر من شخص لنفس الموعد</label>
+      </div>
+
+      <div class="col-12 col-md-4 p-0 " [ngClass]="{'hidenNumber': showNumber }">
+        <input type="number" min="1" max="20" class="rounded-3 w-100 p-2 border-1 " placeholder="50 موعد" >
+      </div>
+
+    </div>
+  </div>
+
+</div>

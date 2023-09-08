@@ -1,0 +1,15 @@
+<div class=" py-5 rounded-3" style="background-color:#DFE1E3 ;" [ngClass]="{'ltr': changeDir }" >
+  <button class="btn btn-light mb-3 mx-5" style="margin-top: -25px;" (click)="changeDirection()" >{{rtl}}</button>
+  <div class="mx-3 my-3">
+    <app-nav-bar></app-nav-bar>
+  </div>
+  <div class="row mx-3">
+    <div class="col-12">
+      <app-first></app-first>
+    </div>
+    <div class="col-12 my-4 bg-light rounded">
+      <app-second></app-second>
+    </div>
+  </div>
+</div>
+<!-- [(ngModel)]="changeDir" (change)="changeDir = true" [ngClass]="{'changeDirection': changeDir }"-->

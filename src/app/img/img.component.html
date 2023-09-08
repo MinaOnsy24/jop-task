@@ -1,0 +1,19 @@
+<div class="bg-light p-4 mx-0 row align-items-center rounded">
+  <div class="col-3 position-relative">
+    <!-- <div class="btn position-absolute translate-middle p-1 rounded-circle w-25">
+      <input type="file" name="" id="" (change)="uploadimg($event)">
+    </div> -->
+
+    <div class="input-div btn position-absolute translate-middle pt-1 ">
+      <input class="input" name="file" type="file" (change)="uploadimg($event)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="1em" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon"><polyline points="16 16 12 12 8 16"></polyline><line y2="21" x2="12" y1="12" x1="12"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path><polyline points="16 16 12 12 8 16"></polyline></svg>
+    </div>
+
+    <!-- <img class="btn position-absolute translate-middle p-1 rounded-circle w-25" src="data:image/png;base64,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" alt=""> -->
+    <img class="w-100 rounded-5 " [src]="url" alt="">
+  </div>
+  <div class="col-9 p-0">
+    <label for="اسم الموارد" class="color1">اسم الموارد</label>
+    <input type="text" id="اسم الموارد" class="w-100 rounded-3 border" placeholder="Mina Onsy Hafez">
+  </div>
+</div>
