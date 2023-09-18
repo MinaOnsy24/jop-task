@@ -60,7 +60,8 @@
       </div>
 
       <div class="col-12 col-md-2 col-lg-1 mt-2 m-md-0 " [ngClass]="{'hidenTime': !oneAlarm.showproperty }">
-        <button class="btn color1 " style="background-color: rgb(215, 222, 228);" (click)="removInput(oneAlarm.day)">-</button>
+        <button class="btn color1 " style="background-color: rgb(215, 222, 228);" (click)="removInput($event)">-</button>
+        <!-- <button class="btn color1 " style="background-color: rgb(215, 222, 228);" (click)="removInput(oneAlarm.day,inputs)">-</button> --> <!--anther way-->
       </div>
 
     </div>

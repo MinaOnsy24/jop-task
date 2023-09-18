@@ -27,23 +27,30 @@ export class SecondComponent {
       if(findDay){
 
         if(findDay.addInput){
-          findDay.addInput.push(0)
+          findDay.addInput.push(Date.now())
 
         }else{
-          findDay.addInput = [0]
+          findDay.addInput = [Date.now()]
         }
       }
   }
 
-  removInput(id:any){
-    const findDay = this.alarm.find(dayObj =>
-      dayObj.day == id
-    )
-      if(findDay.addInput){
-        findDay.addInput.pop()
-      }
+  // removInput(id:any,input:any){
+  //   const findDay = this.alarm.find(dayObj =>
+  //     dayObj.day == id
+  //   )
 
+  //     if(findDay.addInput){
+  //       let index = findDay.addInput.findIndex((id:any)=>id==input)
+  //       if(index>=0){
+  //         findDay.addInput.splice(index,1)
+  //       }
+  //     }
+  // }
+  removInput(e:any){
+    e.target.parentElement.parentElement.remove()
   }
+
 }
 
 // interface days {
